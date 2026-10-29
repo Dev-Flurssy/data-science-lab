@@ -1,14 +1,15 @@
-# Data Science Playground
+# Data Science Lab
 
-## Hey There, Welcome to my Data Science Playground!
+## Hey There, Welcome to my Data Science Lab!
 
-I'm an AI Engineering student passionate about Data Science, Machine Learning, and Artificial Intelligence. This repository serves as a place where I document my learning journey, practice real-world data science workflows, and continuously improve my skills through hands-on projects.
+I'm an AI Engineering student passionate about Data Science, Machine Learning, and Artificial Intelligence. 
+This repository serves as a place where I document my learning journey, practice real-world data science workflows, and continuously improve my skills through hands-on projects.
 
 My goal is not only to build machine learning models but also to understand the complete process behind them, from cleaning messy datasets to uncovering meaningful insights and making data-driven predictions.
 
 Whether you're a beginner, fellow student, recruiter, or experienced professional, I hope you find something useful here. Feel free to explore the projects, follow my progress, share feedback, suggest improvements, or offer insights. I'm always open to learning, growing, and improving.
 
-Thank you for stopping by, and welcome to the journey! 🚀
+Thank you for stopping by, and welcome to the journey! 
 
 ---
 
