@@ -156,7 +156,7 @@ The focus is not only prediction but also:
 ## Repository Structure
 
 ```text
-Data-Science-Playground/
+Data-Science-Lab/
 │
 ├── datasets/
 │   ├── raw/
@@ -169,17 +169,13 @@ Data-Science-Playground/
 │   ├── model_training.ipynb
 │   └── model_evaluation.ipynb
 │
-├── projects/
-│
 ├── reports/
 │   ├── visualizations/
 │   └── summaries/
 │
-├── models/
+├── Cheat Sheet
 │
-├── src/
-│
-├── requirements.txt
+├── Project Order.md
 │
 └── README.md
 ```
