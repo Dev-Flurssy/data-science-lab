@@ -1,0 +1,49 @@
+from pathlib import Path
+
+# Where am I?
+Path.cwd()
+
+# What files/folders are here?
+list(Path.cwd().iterdir())
+
+# Does this file/folder exist?
+Path("data.csv").exists()
+
+# Create a folder
+Path("Datasets").mkdir()
+
+# Create folder if it doesn't exist
+Path("Datasets").mkdir(exist_ok=True)
+
+# Build a path
+file = Path("Datasets") / "spam.csv"
+
+# Does the file exist?
+file.exists()
+
+# Is it a file?
+file.is_file()
+
+# Is it a folder?
+file.is_dir()
+
+# Absolute path
+file.resolve()
+
+# Parent folder
+file.parent
+
+# File name
+file.name
+
+# Extension
+file.suffix
+
+# File name without extension
+file.stem
+
+# Save a CSV
+df.to_csv(file, index=False)
+
+# Read a CSV
+pd.read_csv(file)
