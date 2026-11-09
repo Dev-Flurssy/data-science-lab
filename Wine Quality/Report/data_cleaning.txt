@@ -1,0 +1,90 @@
+Data Collection & Cleaning
+
+Data Collection
+The Wine Quality dataset was imported and stored as a raw CSV file (`wine_quality_raw.csv`) to preserve the original data and ensure reproducibility throughout the project.
+
+
+Initial Data Inspection
+A preliminary inspection was performed to understand the dataset structure and quality.
+
+- Initial dataset shape: **6,497 rows × 13 columns**
+- Displayed sample records using `head()` to verify successful import.
+- Reviewed column names and data types using `info()`.
+
+
+Missing Value Analysis
+
+The dataset was checked for missing values using:
+```python
+df.isnull().sum()
+```
+
+Finding: No missing values were detected in any of the features.
+
+
+Duplicate Value Analysis
+The dataset was checked for duplicate records using:
+
+```python
+df.duplicated().sum()
+```
+
+Finding: 1,177 duplicate rows were identified.
+
+To improve data quality and prevent biased analysis and model performance, duplicate records were removed.
+- Rows before duplicate removal: **6,497**
+- Duplicate rows removed: **1,177**
+- Rows after duplicate removal: **5,320**
+
+
+
+Statistical Analysis
+
+A statistical summary of the cleaned dataset was generated using:
+```python
+df.describe().T
+```
+
+The transpose (`.T`) was used to improve readability by presenting each feature as a row and the statistical metrics as columns.
+
+
+Key Observations
+
+Distribution Analysis
+The comparison between the mean and median (50th percentile) was used to understand feature distributions.
+
+- Residual Sugar shows a noticeable positive (right) skew, with the mean being significantly greater than the median.
+- Volatile Acidity exhibits a slight positive skew, as the mean is slightly higher than the median.
+- Free Sulfur Dioxide appears reasonably symmetric since the mean and median are relatively close.
+
+
+
+Potential Outlier Detection
+
+Potential outliers were identified by comparing the 75th percentile (Q3) with the maximum value of each feature.
+
+| Feature | 75% (Q3) | Maximum |
+|----------|----------|----------|
+| Residual Sugar | 7.50 | 65.80 |
+| Free Sulfur Dioxide | 41.00 | 289.00 |
+| Total Sulfur Dioxide | 153.25 | 440.00 |
+| Sulphates | 0.60 | 2.00 |
+
+The substantial differences between Q3 and the maximum values suggest the presence of extreme observations that will require further investigation through boxplots and distribution visualizations.
+
+
+Target Variable Analysis
+
+The target variable, Quality, was examined to understand its overall distribution.
+
+- Minimum Quality Score: **3**
+- Maximum Quality Score: **9**
+- Mean Quality Score: **5.80**
+- Median Quality Score: **6.00**
+
+The closeness of the mean and median indicates that the target variable is reasonably distributed and does not exhibit significant skewness.
+
+
+Outcome
+
+The dataset is free of missing values and was successfully cleaned by removing duplicate records. Preliminary statistical analysis identified several features with potential outliers and varying degrees of skewness, providing a strong foundation for the next stage of Exploratory Data Analysis (EDA), visualization, feature engineering, and predictive modeling.
