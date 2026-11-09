@@ -1,0 +1,52 @@
+import os
+
+# Current folder
+os.getcwd()
+
+# List files/folders in current directory
+os.listdir()
+
+# List files/folders in another directory
+os.listdir('..')
+
+# Check existence
+os.path.exists("data.csv")
+
+# Check if file
+os.path.isfile("data.csv")
+
+# Check if folder
+os.path.isdir("Datasets")
+
+# Create folder
+os.mkdir("Datasets")
+
+# Create nested folders
+os.makedirs("Data/Raw/2026")
+
+# Rename file/folder
+os.rename("old.csv", "new.csv")
+
+# Delete file
+os.remove("spam.csv")
+
+# Delete empty folder
+os.rmdir("Datasets")
+
+# Absolute path
+os.path.abspath("spam.csv")
+
+# Parent folder
+os.path.dirname("Datasets/spam.csv")
+
+# File name
+os.path.basename("Datasets/spam.csv")
+
+# Join paths
+os.path.join("Datasets", "spam.csv")
+
+# Split path
+os.path.split("Datasets/spam.csv")
+
+# Filename and extension
+os.path.splitext("spam.csv")
