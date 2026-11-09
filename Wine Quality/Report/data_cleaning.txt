@@ -1,13 +1,14 @@
 Data Collection & Cleaning
 
 Data Collection
-The Wine Quality dataset was imported and stored as a raw CSV file (`wine_quality_raw.csv`) to preserve the original data and ensure reproducibility throughout the project.
+The Wine Quality dataset was imported and stored as a raw CSV file (`wine_quality_raw.csv`) 
+to preserve the original data and ensure reproducibility throughout the project.
 
 
 Initial Data Inspection
 A preliminary inspection was performed to understand the dataset structure and quality.
 
-- Initial dataset shape: **6,497 rows × 13 columns**
+- Initial dataset shape: 6,497 rows × 13 columns
 - Displayed sample records using `head()` to verify successful import.
 - Reviewed column names and data types using `info()`.
 
@@ -16,25 +17,23 @@ Missing Value Analysis
 
 The dataset was checked for missing values using:
 ```python
-df.isnull().sum()
+df.isnull().sum() 
 ```
-
 Finding: No missing values were detected in any of the features.
 
 
 Duplicate Value Analysis
-The dataset was checked for duplicate records using:
 
+The dataset was checked for duplicate records using:
 ```python
 df.duplicated().sum()
 ```
-
 Finding: 1,177 duplicate rows were identified.
 
 To improve data quality and prevent biased analysis and model performance, duplicate records were removed.
-- Rows before duplicate removal: **6,497**
-- Duplicate rows removed: **1,177**
-- Rows after duplicate removal: **5,320**
+- Rows before duplicate removal: 6,497
+- Duplicate rows removed: 1,177
+- Rows after duplicate removal: 5,320
 
 
 
@@ -47,7 +46,6 @@ df.describe().T
 
 The transpose (`.T`) was used to improve readability by presenting each feature as a row and the statistical metrics as columns.
 
-
 Key Observations
 
 Distribution Analysis
@@ -56,7 +54,6 @@ The comparison between the mean and median (50th percentile) was used to underst
 - Residual Sugar shows a noticeable positive (right) skew, with the mean being significantly greater than the median.
 - Volatile Acidity exhibits a slight positive skew, as the mean is slightly higher than the median.
 - Free Sulfur Dioxide appears reasonably symmetric since the mean and median are relatively close.
-
 
 
 Potential Outlier Detection
@@ -73,18 +70,58 @@ Potential outliers were identified by comparing the 75th percentile (Q3) with th
 The substantial differences between Q3 and the maximum values suggest the presence of extreme observations that will require further investigation through boxplots and distribution visualizations.
 
 
+
 Target Variable Analysis
 
-The target variable, Quality, was examined to understand its overall distribution.
+The distribution of the target variable (`quality`) was analyzed using a count plot and frequency counts.
 
-- Minimum Quality Score: **3**
-- Maximum Quality Score: **9**
-- Mean Quality Score: **5.80**
-- Median Quality Score: **6.00**
+```python
+sns.countplot(data=df, x='quality')
+plt.show()
 
-The closeness of the mean and median indicates that the target variable is reasonably distributed and does not exhibit significant skewness.
+df['quality'].value_counts().sort_index()
+```
+
+Quality Score Frequencies
+
+| Quality Score | Count |
+|--------------|--------:|
+| 3 | 30 |
+| 4 | 206 |
+| 5 | 1,752 |
+| 6 | 2,323 |
+| 7 | 856 |
+| 8 | 148 |
+| 9 | 5 |
+
+Key Findings
+
+- Wine quality scores range from 3 to 9.
+- The dataset is heavily concentrated around quality scores 5 and 6.
+- Quality score 6 is the most common class, representing 2,323 samples (43.7%) of the dataset.
+- Quality score 5 is the second most common class, containing 1,752 samples (32.9%).
+- Together, quality scores 5 and 6 account for more than 76% of all observations.
+- High-quality wines are relatively rare:
+  - Quality 8 contains only 148 samples.
+  - Quality 9 contains only 5 samples.
+- Low-quality wines are also uncommon:
+  - Quality 3 contains only 30 samples.
+  - Quality 4 contains only 206 samples.
+
+Interpretation
+
+The target variable exhibits a significant class imbalance, 
+with the majority of observations concentrated in the middle-quality categories (5 and 6) 
+and very few observations in the extreme classes (3, 8, and 9).
+
+This imbalance is an important consideration for machine learning model development. 
+A model trained on this dataset may become biased toward predicting the dominant classes 
+and may struggle to accurately classify rare quality scores. 
+Appropriate evaluation metrics and imbalance-handling techniques should therefore be considered during the modeling phase.
 
 
 Outcome
+The dataset is free of missing values and was successfully cleaned by removing duplicate records. 
+Preliminary statistical analysis identified several features with potential outliers and varying degrees of skewness, 
+providing a strong foundation for the next stage of Exploratory Data Analysis (EDA), visualization, feature engineering, and predictive modeling.
 
-The dataset is free of missing values and was successfully cleaned by removing duplicate records. Preliminary statistical analysis identified several features with potential outliers and varying degrees of skewness, providing a strong foundation for the next stage of Exploratory Data Analysis (EDA), visualization, feature engineering, and predictive modeling.
