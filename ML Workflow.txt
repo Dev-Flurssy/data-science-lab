@@ -1,0 +1,31 @@
+Raw data
+   ↓
+Data validation / understanding
+   ↓
+Basic cleaning
+   ↓
+Train/Test split
+   ↓
+EDA on TRAINING data
+   ↓
+Preprocessing pipeline
+   ↓
+Baseline model
+   ↓
+Cross-validation
+   ↓
+Hyperparameter tuning
+   ↓
+Feature selection / alternative preprocessing
+   ↓
+Select final model
+   ↓
+ONE final untouched test evaluation
+   ↓
+Error analysis / diagnostics
+   ↓
+Save pipeline
+   ↓
+Deployment
+   ↓
+Monitoring
