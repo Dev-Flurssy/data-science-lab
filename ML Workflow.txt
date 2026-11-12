@@ -1,31 +1,37 @@
-Raw data
+Raw Data
    ↓
-Data validation / understanding
+Data Understanding / Validation
    ↓
-Basic cleaning
+Basic Cleaning
    ↓
-EDA on data
+Exploratory Data Analysis (EDA)
    ↓
-Train/Test split
+Define Target (X, y)
    ↓
-Preprocessing pipeline
+Train / Validation / Test Split
    ↓
-Baseline model
+Baseline Model
    ↓
-Cross-validation
+Feature Engineering
    ↓
-Hyperparameter tuning
+Feature Selection
    ↓
-Feature selection / alternative preprocessing
+Preprocessing Pipeline
    ↓
-Select final model
+Model Comparison
    ↓
-ONE final untouched test evaluation
+Hyperparameter Tuning
    ↓
-Error analysis / diagnostics
+Cross-Validation
    ↓
-Save pipeline
+Select Best Model
+   ↓
+Final Evaluation on Untouched Test Set
+   ↓
+Error Analysis / Diagnostics
+   ↓
+Save Final Pipeline
    ↓
 Deployment
    ↓
-Monitoring
+Monitoring & Retraining
