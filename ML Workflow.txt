@@ -4,9 +4,9 @@ Data validation / understanding
    ↓
 Basic cleaning
    ↓
-Train/Test split
+EDA on data
    ↓
-EDA on TRAINING data
+Train/Test split
    ↓
 Preprocessing pipeline
    ↓
